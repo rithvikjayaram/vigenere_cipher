@@ -24,33 +24,3 @@ void encryption(char text[],char key[])
 	 printf("\nNew Generated Key: %s", newkey);
    printf("\nEncrypted Message: %s", encryptedmsg);
 }
-
-/*#include<stdio.h>
-#include<string.h>
-void encryption(char text[],char key[])
-{
-  int text_len = strlen(text),keyLen = strlen(key),i,j;
-
-  //printf("%s  ", text);
-    //printf("%s  ", key);
-
-    char newKey[text_len], encryptedMsg[text_len];
-
-    //generating new key
-    for(i = 0, j = 0; i < text_len; ++i, ++j)
-	{
-        if(j == keyLen)
-            j = 0;
-
-        newKey[i] = key[j];
-    }
-    newKey[i] = '\0';
-
-     //encryption
-     for(i = 0; i < text_len; ++i)
-         encryptedMsg[i] = ((text[i] + newKey[i]) % 26) + 'A';
-
-     encryptedMsg[i] = '\0';
-     printf("\nNew Generated Key: %s", newKey);
-     printf("\nEncrypted Message: %s", encryptedMsg);
-}*/
