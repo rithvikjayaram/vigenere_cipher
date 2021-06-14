@@ -55,7 +55,8 @@ int main()
                 strupr(encrypt);
                 strupr(key);
 
-                printf("call decrypt function here \n");
+                //printf("call decrypt function here \n");
+                decryption(encrypt, key);
 
                 break;
 

@@ -8,7 +8,7 @@ void decryption(char ciphertext[], char key[])
     //generating new key
     for(i = 0, j = 0; i < ciphertext_len; ++i, ++j)
     {
-        if(j == keywLen)
+        if(j == keyLen)
             j = 0;
 
         newKey[i] = key[j];
@@ -19,8 +19,8 @@ void decryption(char ciphertext[], char key[])
     for(i = 0; i < ciphertext_len; ++i)
         decryptedMsg[i] = (((ciphertext[i] - newKey[i]) + 26) % 26) + 'A';
     decryptedMsg[i] = '\0';
- 
+
     printf("\nNew Generated Key: %s", newKey);
     printf("\nDecrypted Message: %s", decryptedMsg);
- 
+
 }
