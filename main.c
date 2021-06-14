@@ -1,7 +1,7 @@
 /*
 main - done
 encrypt - done
-decrypt - not done
+decrypt - done
 explain - done
 header - done
 makefile - figure out how to write
