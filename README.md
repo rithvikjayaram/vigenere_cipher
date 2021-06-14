@@ -1,4 +1,4 @@
-C Lab - Mini Project
+C Lab : Sem 2 - Mini Project 
 Vigenere Cipher
 1. Explaination
 2. Encryption
