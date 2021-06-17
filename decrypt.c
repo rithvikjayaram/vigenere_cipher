@@ -1,27 +1,32 @@
 #include <stdio.h>
 #include <string.h>
 
-void decryption(char ciphertext[], char key[])
+void decryption(char ciphertext[], char key[]) //parameters for the cipher text and the keyword
 {
-    int ciphertext_len = strlen(ciphertext);
-    int key_len = strlen(key);
-    int i, j;
+    int ciphertext_len = strlen(ciphertext); //length of ciphertext
+    int key_len = strlen(key); //length of key
+    int i, j; //integers to run for loop
 
-    char new_key[ciphertext_len], decrypted_msg[ciphertext_len];
+    //defining array for the decrypted message and the key generated
+    char new_key[ciphertext_len], decrypted_msg[ciphertext_len]; 
 
     //generating new key
-    for(i = 0, j = 0; i < ciphertext_len; ++i, ++j)
+    for(i = 0, j = 0; i < ciphertext_len; ++i, ++j) 
     {
-        if(j == key_len)
+        //to repeat characters from start when the length of the ciphertext is > that of the keyword
+        if(j == key_len) 
             j = 0;
 
-        new_key[i] = key[j];
+        //to generate a new key from the given keyword such that the length of newkey = length of ciphertext
+        new_key[i] = key[j]; 
     }
-    new_key[i] = '\0';
+    new_key[i] = '\0'; //denote the end of a string
 
+    //decryption
     for(i = 0; i < ciphertext_len; ++i)
-        decrypted_msg[i] = (((ciphertext[i] - new_key[i]) + 26) % 26) + 'A';
-    decrypted_msg[i] = '\0';
+        //to convert the cipher text to plain text character wise using the vigenere cipher formula
+        decrypted_msg[i] = (((ciphertext[i] - new_key[i]) + 26) % 26) + 'A'; 
+    decrypted_msg[i] = '\0'; //denote the end of a string
 
     printf("\nNew Generated Key: %s", new_key);
     printf("\nDecrypted Message: %s", decrypted_msg);
