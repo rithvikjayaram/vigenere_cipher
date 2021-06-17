@@ -39,7 +39,7 @@ void explain()
 
   printf("\n\nConsider the following example : \nPlaintext - PROJECT \nKey - CIPHER \n");
 
-  printf("Here the new generated key will be -\nNew Key : CIPHER \n\n");
+  printf("Here the new generated key will be -\nNew Key : CIPHERC \n\n");
 
   printf("The first letter of the plaintext, P is paired with C, the first letter of the key. So using row P and column C of the Vigenere square, namely R. Similarly, for the second letter of the plaintext, the second letter of the key is used, the letter at row R and column I is Z. The rest of the plaintext is enciphered in a similar fashion. \n\n");
 
