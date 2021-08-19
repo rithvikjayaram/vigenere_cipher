@@ -11,6 +11,7 @@ makefile - figure out how to write
 #include <stdlib.h>
 #include <string.h>
 #include "header.h"
+#include <conio.h>
 
 int main()
 {
@@ -24,49 +25,61 @@ int main()
     printf("1 - What is Vigenere Cipher (Help menu) \n");
     printf("2 - Encryption \n");
     printf("3 - Decryption \n");
-    printf("4 - Exit \n");
+    printf("4 - File Encryption \n");
+    printf("5 - File Decryption \n");
+    printf("6 - Exit \n");
 
     scanf("%d", &choice);
 
     char plaintext[50], key[50], encrypt[50];
 
-    switch(choice)
+    switch (choice)
     {
-      case 1  : explain();
-                break;
+    case 1:
+      explain();
+      break;
 
-      case 2  : printf("Enter the plaintext (text to be encrypted) \n");
-                scanf("%s", &plaintext);
-                printf("Enter the key \n");
-                scanf("%s", &key);
+    case 2:
+      printf("Enter the plaintext (text to be encrypted) \n");
+      scanf("%s", plaintext);
+      printf("Enter the key \n");
+      scanf("%s", key);
+      strupr(plaintext);
+      strupr(key);
+      encryption(plaintext, key);
+      break;
 
-                strupr(plaintext);
-                strupr(key);
+    case 3:
+      printf("Enter the encrypted text \n");
+      scanf("%s", encrypt);
+      printf("Enter the key\n");
+      scanf("%s", key);
+      strupr(encrypt);
+      strupr(key);
+      decryption(encrypt, key);
+      break;
 
-                encryption(plaintext, key);
+    case 4:
+      printf("Enter the key to encrypt the file\n");
+      scanf("%s", key);
+      file_encryption(key);
+      break;
 
-                break;
+    case 5:
+      printf("Enter the key to decrypt the file\n");
+      scanf("%s", key);
+      file_decryption(key);
+      break;
 
-      case 3  : printf("Enter the encrypted text \n");
-                scanf("%s", &encrypt);
-                printf("Enter the key \n");
-                scanf("%s", &key);
+    case 6:
+      exit(0);
 
-                strupr(encrypt);
-                strupr(key);
-
-                //printf("call decrypt function here \n");
-                decryption(encrypt, key);
-
-                break;
-
-      case 4  : exit(0);
-
-      default : printf("Invalid Output. Please try again. \n");
-                break;
+    default:
+      printf("Invalid Output. Please try again. \n");
+      break;
     }
 
-  } while(choice != 4);
+  } while (choice != 6);
 
   return 0;
 }
