@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <string.h>
 
-void decryption(char ciphertext[], char key[]) //parameters for the cipher text and the keyword
+//parameters for the cipher text and the keyword
+void decryption(char ciphertext[], char key[]) 
 {
     int ciphertext_len = strlen(ciphertext); //length of ciphertext
     int key_len = strlen(key); //length of key
