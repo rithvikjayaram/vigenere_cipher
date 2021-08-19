@@ -4,8 +4,10 @@
 
 void file_decryption(char key[])
 {
+    //open the cipher text file
     FILE *f1 = fopen("cipher.txt", "r");
 
+    //codition to check for error in opening the file
     if (f1 == NULL)
         printf("error in opening the file");
 
@@ -14,13 +16,14 @@ void file_decryption(char key[])
         char ch;
         int keyLen = strlen(key), i, j;
 
+        //to find the length of the message in the file
         int ciphertext_len = 0;
         for (int i = 0; (ch = fgetc(f1)) != EOF; i++)
         {
-            if (!(ch == ' ') || (ch == '\n') || (ch == '\t'))
+            if ((ch >= 'A') && (ch <= 'Z'))
                 ciphertext_len++;
         }
-        printf("cipher text length: %d\n", ciphertext_len);
+        //printf("cipher text length: %d\n", ciphertext_len);
 
         char newKey[ciphertext_len];
 
@@ -34,21 +37,19 @@ void file_decryption(char key[])
         }
         newKey[i] = '\0';
         printf("\nNew Generated Key: %s\n", newKey);
-        //strupr(newKey);
 
-        rewind(f1);
+        rewind(f1); //to bring back the ponter to the beginning of the file
         char c;
+        printf("The decrypted message is: ");
         for (int i = 0; (ch = fgetc(f1)) != '\n'; i++)
         {
             if ((ch >= 'A') && (ch <= 'Z'))
             {
-                //ch=ch-32;
                 c = (((ch - newKey[i]) + 26) % 26) + 'A';
                 fputc(c, stdout);
             }
             else if ((ch == ' ') || (ch == '\t'))
-            {
-                //printf(" 2 %d", ch);
+            {   
                 fputc(ch, stdout);
             }
         }
