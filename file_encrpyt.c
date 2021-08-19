@@ -17,10 +17,10 @@ void file_encryption(char key[])
         int ciphertext_len = 0;
         for (int i = 0; (ch = fgetc(f1)) != EOF; i++)
         {
-            if (!(ch == ' ') || (ch == '\n') || (ch == '\t'))
+            if ((ch >= 'A') && (ch <= 'Z'))
                 ciphertext_len++;
         }
-        printf("cipher text length: %d\n", ciphertext_len);
+        //printf("cipher text length: %d\n", ciphertext_len);
 
         char newKey[ciphertext_len];
 
@@ -34,10 +34,10 @@ void file_encryption(char key[])
         }
         newKey[i] = '\0';
         printf("\nNew Generated Key: %s\n", newKey);
-        //strupr(newKey);
 
         rewind(f1);
         char c;
+        printf("The encrypted message is: ");
         for (int i = 0; (ch = fgetc(f1)) != '\n'; i++)
         {
             if ((ch >= 'A') && (ch <= 'Z'))
@@ -47,7 +47,6 @@ void file_encryption(char key[])
             }
             else if ((ch == ' ') || (ch == '\t'))
             {
-                //printf(" 2 %d", ch);
                 fputc(ch, stdout);
             }
         }
