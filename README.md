@@ -29,8 +29,6 @@ YES
 # Maintainer
 Maintainers : [karunakc](https://github.com/karunakc) , [gmail](karunakkc@gmail.com)
 
-
-C Lab : Sem 2 - Mini Project 
 Vigenere Cipher
 1. Explaination
 2. Encryption (input from user)
