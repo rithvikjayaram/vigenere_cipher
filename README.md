@@ -1,4 +1,4 @@
-#VIGENERE CIPHER
+# VIGENERE CIPHER
 
 Hello there!
 This is a C program for the vigenere cipher. The program uses multiple files, using a make file. What this means is that there is a main file, where the main function is writen. The other functions are written in different files and the program entirely is compiled using the make file.
