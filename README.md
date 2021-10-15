@@ -22,12 +22,12 @@ First, install mingw compiler for the mentioned website: https://sourceforge.net
 2. Type the given command in cmd to compile the code: ```mingw32-make -f filename.mk```  
 3. To run the code type ```a.out``` or ```a.exe```  
 
-#About the project
+# About the project
 Is this project beginner friendly?
 YES
 
-#Maintainer
-Maintainers : [Your github username] , [you email ID]
+# Maintainer
+Maintainers : [karunakc](https://github.com/karunakc) , [gmail](karunakkc@gmail.com)
 
 
 C Lab : Sem 2 - Mini Project 
