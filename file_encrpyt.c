@@ -35,21 +35,7 @@ void file_encryption(char key[])
         newKey[i] = '\0';
         printf("\nNew Generated Key: %s\n", newKey);
 
-        rewind(f1);
-        char c;
-        printf("The encrypted message is: ");
-        for (int i = 0; (ch = fgetc(f1)) != '\n'; i++)
-        {
-            if ((ch >= 'A') && (ch <= 'Z'))
-            {
-                c = ((ch + newKey[i]) % 26) + 'A';
-                fputc(c, stdout);
-            }
-            else if ((ch == ' ') || (ch == '\t'))
-            {
-                fputc(ch, stdout);
-            }
-        }
+        
     }
     fclose(f1);
 }
