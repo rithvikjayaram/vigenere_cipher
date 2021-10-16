@@ -37,9 +37,6 @@ void file_decryption(char key[])
         }
         newKey[i] = '\0';
         printf("\nNew Generated Key: %s\n", newKey);
-
-        
-        
     }
     fclose(f1);
 }
